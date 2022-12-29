@@ -48,6 +48,7 @@ body {
   
   h1 {
     font-size: 50px;
+    margin-top: 5rem;
   }
   
   h3 {
@@ -58,6 +59,7 @@ body {
     border: 2px solid #d8d8d8;
     width: 70%;
     margin: 40px;
+    margin-top: 5rem;
     padding: 15px;
     -webkit-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
     -moz-box-shadow: 0px 2px 15px -12px rgba(0, 0, 0, 0.57);
@@ -77,6 +79,7 @@ body {
   
   li {
     font-size: 18px;
+    cursor: pointer;
   }
   
   .nav-bar {
