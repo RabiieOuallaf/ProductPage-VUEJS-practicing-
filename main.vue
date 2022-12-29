@@ -1,16 +1,17 @@
 const app = Vue.createApp({
     data() {
         return {
-            Product: 'Socks',
-            Image: './assets/images/socks_blue.jpg',
-            InStock: true,
+            Product: 'Colorfull socks',
+            Brand: 'YouSocks',
+            selectedVariant: 0,
             details: ['50% cotton', '30% wool', '20% polyester'],
             variants: [
 
-                { id: 123, color: "green", image: "./assets/images/socks_green.jpg" },
-                { id:456, color: "blue", image: "./assets/images/socks_blue.jpg"  }
+                { id: 123, color: "green", image: "./assets/images/socks_green.jpg", quantity: 50 },
+                { id:456, color: "blue", image: "./assets/images/socks_blue.jpg", quantity: 0}
                 
             ],
+            Inventory: 20,
             cart: 0
     
         }
@@ -19,8 +20,23 @@ const app = Vue.createApp({
         addToCart() {
             this.cart += 1
         },
-        changeImage(variantImage) {
-            this.Image = variantImage
+        updateVariant(index) {
+            this.selectedVariant = index
+        }
+    },
+    computed: {
+
+        Title() {
+            return this.Brand + ' ' + this.Product;
+        },
+        Image() {
+
+            return this.variants[this.selectedVariant].image;
+        },
+        InStock() {
+
+            return this.variants[this.selectedVariant].quantity;
+
         }
     }
 })
