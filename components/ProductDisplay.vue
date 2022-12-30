@@ -6,6 +6,7 @@ app.component("product-display", {
             required : true
             
         }
+
     },
 
     template: 
@@ -42,6 +43,8 @@ app.component("product-display", {
             </div>
 
         </div>
+        <ReviewList :reviews="reviews" ></ReviewList>
+        <ReviewForm @review-submitted="addReview"></ReviewForm>
     </div>
 
     
@@ -60,6 +63,7 @@ app.component("product-display", {
                 
             ],
             Inventory: 20,
+            reviews: []
     
         }
     },
@@ -75,6 +79,9 @@ app.component("product-display", {
         updateVariant(index) {
             this.selectedVariant = index
         },
+        addReview(review) {
+            this.reviews.push(review)
+        }
         
     },
     computed: {
